@@ -10,10 +10,11 @@
         android:id="@+id/about_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="257dp"
+        android:layout_marginTop="168dp"
         android:text="@string/about_alc"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="161dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/my_profile_btn"
@@ -21,17 +22,21 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="@string/my_profile"
-        app:layout_constraintTop_toBottomOf="@+id/about_btn"
-        tools:layout_editor_absoluteX="161dp" />
+        app:layout_constraintEnd_toEndOf="@+id/about_btn"
+        app:layout_constraintStart_toStartOf="@+id/about_btn"
+        app:layout_constraintTop_toBottomOf="@+id/about_btn" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="46dp"
+        android:layout_marginBottom="8dp"
         android:text="@string/welcome_alc"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toTopOf="@+id/about_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="46dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>
