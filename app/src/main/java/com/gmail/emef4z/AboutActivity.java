@@ -1,7 +1,10 @@
 package com.gmail.emef4z;
 
+import android.graphics.Bitmap;
+import android.net.http.SslError;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.webkit.SslErrorHandler;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -22,13 +25,24 @@ public class AboutActivity extends AppCompatActivity {
         webView = (WebView) findViewById(R.id.webview_alc);
 
         //Enabling the webview to open in this app and not using an external app
-        webView.setWebViewClient(new WebViewClient());
+        webView.setWebViewClient(new WebViewClient() {
+
+            @Override  //overrode onReceivedSslError to allow secure sites to load
+            public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
+
+                handler.proceed();
+            }
+
+        });
+
 
         //Enabling webview to support javascript
         webView.getSettings().setJavaScriptEnabled(true);
 
         //Loads the Url; which is in our String variable
         webView.loadUrl(andelaUrl);
+
+
 
     }
 }
